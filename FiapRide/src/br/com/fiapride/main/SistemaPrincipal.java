@@ -1,29 +1,27 @@
-
 package br.com.fiapride.main;
 
-// Importamos a classe Passageiro para que o sistema a reconheça
-import br.com.fiapride.model.Passageiro;
+
+import br.com.fiapride.model.Mochila;
 
 public class SistemaPrincipal {
 
     public static void main(String[] args) {
-        // INSTANCIAÇÃO
-        // O comando 'new' aloca memória para um novo objeto.
-        // Criando o primeiro passageiro (Objeto 1)
-        Passageiro passageiro1 = new Passageiro();
-        passageiro1.nome = "Ana Silva";
-        passageiro1.saldo = 50.0;
 
-        // Criando o segundo passageiro (Objeto 2)
-        Passageiro passageiro2 = new Passageiro();
-        passageiro2.nome = "Carlos Souza";
-        passageiro2.saldo = 12.50;
+        Mochila mochila1 = new Mochila("Aço", 100, 3);
+        mochila1.inserirItem(35.0);
+        mochila1.retirarItem(12.0);
 
-        // Exibindo os dados no Console
+
+        Mochila mochila2 = new Mochila("Plastico", 35.0, 2);
+        mochila2.inserirItem(34.0);
+        mochila2.inserirItem(10.0);
+
+
+
         System.out.println("--- Sistema FiapRide ---");
-        System.out.println("Passageiro: " + passageiro1.nome + " | Saldo: R$" + passageiro1.saldo);
-        System.out.println("Passageiro: " + passageiro2.nome + " | Saldo: R$" + passageiro2.saldo);
-        
-        // Teste mental: Se eu mudar o nome do passageiro1, o passageiro2 muda?
+        System.out.println("Mochila 1 - Material: " + mochila1.material + " | Peso Atual: " + mochila1.pesoAtual + "KG | Quantidade de Bolsos: " +mochila1.quantidadeBolsos);
+        System.out.println("Mochila 2 - Material: " + mochila2.material + " | Peso Atual: " + mochila2.pesoAtual + "KG | Quantidade de Bolsos: " +mochila2.quantidadeBolsos);
+
+
     }
 }

@@ -1,12 +1,20 @@
-##Projeto de programação orientada a objeto
+# Projeto de Programação Orientada a Objetos
 
-#Classe - Mochila
+## Classe
+**Mochila**
 
-#Atributos - Quantide de bolsos, peso maximo suportado, peso atual da mochila e material
+## Atributos
+- Quantidade de bolsos
+- Peso máximo suportado
+- Peso atual da mochila
+- Material
 
-#Métodos - 
+## Métodos
 
-inserirItem -> É colocado o peso de quanto deseja inserir, utilizando regra para se o peso for exceder o peso maximo, ele nega.
-retirarItem -> É retirado o peso indicado pelo usuario, utilizando regra para se o peso for menor que 0 ou 0, ele nega.
+### inserirItem
+Recebe o peso de um item.  
+Se o peso ultrapassar o peso máximo suportado, o item **não é inserido**.
 
-
+### retirarItem
+Remove um peso indicado pelo usuário.  
+Se o peso resultar em valor **menor ou igual a 0**, a operação é **negada**.

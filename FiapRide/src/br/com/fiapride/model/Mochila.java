@@ -44,7 +44,7 @@ public class Mochila {
     public double getPesoAtual() {
         return pesoAtual;
     }
-    
+
     public int getQuantidadeBolsos() {
 
         return quantidadeBolsos;

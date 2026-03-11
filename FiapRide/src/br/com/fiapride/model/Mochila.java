@@ -51,11 +51,11 @@ public class Mochila {
     }
 
     public void setQuantidadeBolsos(int quantidadeBolsos) {
-        if (this.quantidadeBolsos < 1 || this.quantidadeBolsos > 10){
+        if (quantidadeBolsos < 1 || quantidadeBolsos > 10){
             System.out.println("A quantidade de bolsos precisa estar entre 1 e 10");
-        }else {
-            this.quantidadeBolsos = quantidadeBolsos;
+            return;
         }
+        this.quantidadeBolsos = quantidadeBolsos;
     }
 
     public double getPesoMaximo() {

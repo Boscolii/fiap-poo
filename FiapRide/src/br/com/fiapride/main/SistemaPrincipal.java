@@ -1,29 +1,29 @@
 package br.com.fiapride.main;
 
 
-import br.com.fiapride.model.Mochila;
+import br.com.fiapride.model.Passageiro;
 
 public class SistemaPrincipal {
 
     public static void main(String[] args) {
 
-        Mochila mochila1 = new Mochila("Aço", 100, 3);
-        mochila1.inserirItem(35.0);
-        mochila1.retirarItem(12.0);
+        Passageiro passageiro1 = new Passageiro("Ana Silva", "222");
+        System.out.println("Recarga passageiro 1");
+        passageiro1.adicionarSaldo(50.0);
 
-
-        Mochila mochila2 = new Mochila("Plastico", 35.0, 2);
-        mochila2.inserirItem(34.0);
-        mochila2.inserirItem(10.0);
-
-
+        // Criando o segundo passageiro (Objeto 2)
+        Passageiro passageiro2 = new Passageiro("Carlos Souza", "333");
+        System.out.println("Recarga passageiro 2");
+        passageiro2.adicionarSaldo(12.5);
 
         System.out.println("--- Sistema FiapRide ---");
-        System.out.println("Mochila 1 - Material: " + mochila1.getMaterial() + " | Peso Atual: "
-                + mochila1.getPesoAtual() + "KG | Quantidade de Bolsos: " +mochila1.getQuantidadeBolsos());
-        System.out.println("Mochila 2 - Material: " + mochila2.getMaterial() + " | Peso Atual: "
-                + mochila2.getPesoAtual() + "KG | Quantidade de Bolsos: " +mochila2.getQuantidadeBolsos());
+        System.out.println("Passageiro: " + passageiro1.getNome() + " | Saldo: R$ " + passageiro1.getSaldo() + " | CPF: " + passageiro1.getCpf());
+        System.out.println("Passageiro: " + passageiro2.getNome() + " | Saldo: R$ " + passageiro2.getSaldo() + " | CPF: " + passageiro2.getCpf());
 
+        System.out.println("Pagando viagem do passageiro 1");
+        passageiro1.pagarViagem(20);
+        System.out.println("Pagando viagem do passageiro 2");
+        passageiro2.pagarViagem(20);
 
     }
 }

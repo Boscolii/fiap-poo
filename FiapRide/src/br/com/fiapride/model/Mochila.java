@@ -7,11 +7,11 @@ public class Mochila {
     private int quantidadeBolsos;
     private double pesoMaximo;
 
-    public Mochila(String material,double pesoMaximo, int quantidadeBolsos) {
+    public Mochila(String material,double pesoMaximo) {
         this.setMaterial(material);
         this.setPesoMaximo(pesoMaximo);
         this.pesoAtual = 0;
-        this.quantidadeBolsos = quantidadeBolsos;
+        this.quantidadeBolsos = 0;
     }
 
     public void inserirItem(double peso) {
@@ -44,17 +44,18 @@ public class Mochila {
     public double getPesoAtual() {
         return pesoAtual;
     }
-
-    public void setPesoAtual(double pesoAtual) {
-        this.pesoAtual = pesoAtual;
-    }
-
+    
     public int getQuantidadeBolsos() {
+
         return quantidadeBolsos;
     }
 
     public void setQuantidadeBolsos(int quantidadeBolsos) {
-        this.quantidadeBolsos = quantidadeBolsos;
+        if (this.quantidadeBolsos < 1 || this.quantidadeBolsos > 10){
+            System.out.println("A quantidade de bolsos precisa estar entre 1 e 10");
+        }else {
+            this.quantidadeBolsos = quantidadeBolsos;
+        }
     }
 
     public double getPesoMaximo() {

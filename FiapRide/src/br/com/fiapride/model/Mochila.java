@@ -2,14 +2,14 @@ package br.com.fiapride.model;
 
 public class Mochila {
 
-    public String material;
-    public double pesoAtual;
-    public int quantidadeBolsos;
-    public double pesoMaximo;
+    private String material;
+    private double pesoAtual;
+    private int quantidadeBolsos;
+    private double pesoMaximo;
 
     public Mochila(String material,double pesoMaximo, int quantidadeBolsos) {
-        this.material = material;
-        this.pesoMaximo = pesoMaximo;
+        this.setMaterial(material);
+        this.setPesoMaximo(pesoMaximo);
         this.pesoAtual = 0;
         this.quantidadeBolsos = quantidadeBolsos;
     }
@@ -22,7 +22,6 @@ public class Mochila {
         pesoAtual += peso;
         System.out.println("Item adicionado! Peso atual:"+ pesoAtual +" KG");
     }
-
     public void retirarItem(double peso) {
         if (pesoAtual <= 0) {
             System.out.println("Nao é possivel retirar peso,a mochila esta vazia!");
@@ -31,6 +30,41 @@ public class Mochila {
         pesoAtual -= peso;
         System.out.println("Peso retirado! Peso atual:" + pesoAtual+" KG");
 
-
     }
+
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public double getPesoAtual() {
+        return pesoAtual;
+    }
+
+    public void setPesoAtual(double pesoAtual) {
+        this.pesoAtual = pesoAtual;
+    }
+
+    public int getQuantidadeBolsos() {
+        return quantidadeBolsos;
+    }
+
+    public void setQuantidadeBolsos(int quantidadeBolsos) {
+        this.quantidadeBolsos = quantidadeBolsos;
+    }
+
+    public double getPesoMaximo() {
+        return pesoMaximo;
+    }
+
+    public void setPesoMaximo(double pesoMaximo) {
+        this.pesoMaximo = pesoMaximo;
+    }
+
+
+
 }

@@ -19,8 +19,10 @@ public class SistemaPrincipal {
 
 
         System.out.println("--- Sistema FiapRide ---");
-        System.out.println("Mochila 1 - Material: " + mochila1.material + " | Peso Atual: " + mochila1.pesoAtual + "KG | Quantidade de Bolsos: " +mochila1.quantidadeBolsos);
-        System.out.println("Mochila 2 - Material: " + mochila2.material + " | Peso Atual: " + mochila2.pesoAtual + "KG | Quantidade de Bolsos: " +mochila2.quantidadeBolsos);
+        System.out.println("Mochila 1 - Material: " + mochila1.getMaterial() + " | Peso Atual: "
+                + mochila1.getPesoAtual() + "KG | Quantidade de Bolsos: " +mochila1.getQuantidadeBolsos());
+        System.out.println("Mochila 2 - Material: " + mochila2.getMaterial() + " | Peso Atual: "
+                + mochila2.getPesoAtual() + "KG | Quantidade de Bolsos: " +mochila2.getQuantidadeBolsos());
 
 
     }

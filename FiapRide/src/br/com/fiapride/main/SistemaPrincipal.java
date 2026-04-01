@@ -1,29 +1,32 @@
 package br.com.fiapride.main;
-
-
+// Importe TODAS as classes necessárias!
 import br.com.fiapride.model.Passageiro;
+import br.com.fiapride.model.Veiculo;
+import br.com.fiapride.model.Viagem;
 
 public class SistemaPrincipal {
-
     public static void main(String[] args) {
 
-        Passageiro passageiro1 = new Passageiro("Ana Silva", "222");
-        System.out.println("Recarga passageiro 1");
-        passageiro1.adicionarSaldo(50.0);
+        System.out.println("--- FIAPRIDE: Inicializando Sistema ---");
 
-        // Criando o segundo passageiro (Objeto 2)
-        Passageiro passageiro2 = new Passageiro("Carlos Souza", "333");
-        System.out.println("Recarga passageiro 2");
-        passageiro2.adicionarSaldo(12.5);
+        // 1. Criamos os "atores" independentes primeiro
+        Passageiro ana = new Passageiro("Ana Silva", "222.222.222-22");
+        Veiculo carroDoJoao = new Veiculo("ABC-1234", "Toyota Corolla");
 
-        System.out.println("--- Sistema FiapRide ---");
-        System.out.println("Passageiro: " + passageiro1.getNome() + " | Saldo: R$ " + passageiro1.getSaldo() + " | CPF: " + passageiro1.getCpf());
-        System.out.println("Passageiro: " + passageiro2.getNome() + " | Saldo: R$ " + passageiro2.getSaldo() + " | CPF: " + passageiro2.getCpf());
+        // 2. Criamos a Viagem, conectando (associando) os objetos!
+        // Passamos a variável 'ana' e a variável 'carroDoJoao' como parâmetros.
+// Saldo ana = 0;
+        Viagem viagemDaAna = new Viagem("Avenida Paulista, 1000", ana, carroDoJoao);
 
-        System.out.println("Pagando viagem do passageiro 1");
-        passageiro1.pagarViagem(20);
-        System.out.println("Pagando viagem do passageiro 2");
-        passageiro2.pagarViagem(20);
+        // 3. Testando se os objetos conversam
+        viagemDaAna.exibirResumo();
+
+        // 4. Prova da Passagem por Referência:
+        // Se a Ana colocar saldo na conta dela DEPOIS que a viagem foi criada...
+        ana.adicionarSaldo(50.0);
+
+        // A viagem "enxerga" esse saldo novo?
+        System.out.println("Saldo da Ana consultado ATRAVÉS da Viagem: R$ " + viagemDaAna.getSolicitante().getSaldo());
 
     }
 }

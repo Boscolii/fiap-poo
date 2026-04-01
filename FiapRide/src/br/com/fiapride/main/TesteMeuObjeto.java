@@ -1,24 +1,28 @@
 package br.com.fiapride.main;
-import br.com.fiapride.model.Mochila;
+
+import br.com.fiapride.model.Aviao;
 
 public class TesteMeuObjeto {
+
     public static void main(String[] args) {
-    Mochila mochila1 = new Mochila("Metal", 50);
-    mochila1.setQuantidadeBolsos(0);
-    mochila1.inserirItem(2);
 
+        Aviao aviao1 = new Aviao("Airbus A320", "LATAM", 180);
+        aviao1.setQuantidadeMotores(2);
+        aviao1.embarcarPassageiro(50);
 
-    Mochila mochila2 = new Mochila("Plastico",25);
-    mochila2.setQuantidadeBolsos(11);
-    mochila2.inserirItem(10);
-    mochila2.retirarItem(9);
+        Aviao aviao2 = new Aviao("Boeing 737", "GOL", 170);
+        aviao2.setQuantidadeMotores(3);
+        aviao2.embarcarPassageiro(100);
+        aviao2.desembarcarPassageiro(20);
 
-        System.out.println("Mochila 1 - Material: " + mochila1.getMaterial() + "| Peso Atual: "
-        + mochila1.getPesoAtual() + "KG| Quantidade de bolsos: " + mochila1.getQuantidadeBolsos());
+        System.out.println("Avião 1 - Modelo: " + aviao1.getModelo() +
+                " | Companhia: " + aviao1.getCompanhiaAerea() +
+                " | Passageiros atuais: " + aviao1.getPassageirosAtuais() +
+                " | Motores: " + aviao1.getQuantidadeMotores());
 
-        System.out.println("Mochila 2 - Material: " + mochila2.getMaterial() + "| Peso Atual: "
-                + mochila2.getPesoAtual() + "KG| Quantidade de bolsos: " + mochila2.getQuantidadeBolsos());
-
-
+        System.out.println("Avião 2 - Modelo: " + aviao2.getModelo() +
+                " | Companhia: " + aviao2.getCompanhiaAerea() +
+                " | Passageiros atuais: " + aviao2.getPassageirosAtuais() +
+                " | Motores: " + aviao2.getQuantidadeMotores());
     }
 }
